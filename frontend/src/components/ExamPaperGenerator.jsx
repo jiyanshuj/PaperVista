@@ -18,7 +18,7 @@ const PaperVista = () => {
   const [error, setError] = useState('');
   const [backendStatus, setBackendStatus] = useState('unchecked');
 
-  const BACKEND_URL = 'http://localhost:8000';
+  const BACKEND_URL = 'https://papervista.onrender.com';
 
   React.useEffect(() => {
     checkBackendHealth();
