@@ -12,3 +12,5 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.9
+      - key: CARGO_HOME
+        value: /tmp/cargo-cache 
