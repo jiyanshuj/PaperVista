@@ -7,12 +7,14 @@ services:
 
     runtime: python
     rootDir: backend
-    buildCommand: "pip install -r requirements.txt"
+    buildCommand: "pip install --upgrade pip setuptools && pip install -r requirements.txt"
     startCommand: "uvicorn main:app --host 0.0.0.0 --port $PORT"
 
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.9
+      - key: PIP_BUILD_ISOLATION
+        value: "false"
       - key: GEMINI_API_KEY
         fromSecret: GEMINI_API_KEY
       - key: FRONTEND_URL

@@ -12,7 +12,12 @@ app = FastAPI(title="Exam Paper Generator API")
 frontend_url = os.getenv("FRONTEND_URL", "https://paper-vista-five.vercel.app")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[frontend_url, "https://paper-vista-five.vercel.app/", "https://paper-vista-five.vercel.app/"],
+    allow_origins=[
+        frontend_url,
+        "https://paper-vista-five.vercel.app",
+        "http://localhost:5173",
+        "http://localhost:3000"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
