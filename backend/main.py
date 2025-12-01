@@ -9,16 +9,19 @@ from typing import List, Optional
 app = FastAPI(title="Exam Paper Generator API")
 
 # Configure CORS
+frontend_url = os.getenv("FRONTEND_URL", "http://localhost:5173")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, specify your frontend domain
+    allow_origins=[frontend_url, "http://localhost:5173", "http://localhost:3000"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 # Configure Gemini API
-GEMINI_API_KEY = "AIzaSyDeziCfhdDJQJ2nyjdofVzMhUWtbxjMtCs"
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+if not GEMINI_API_KEY:
+    raise ValueError("GEMINI_API_KEY environment variable is not set")
 genai.configure(api_key=GEMINI_API_KEY)
 
 # Models
