@@ -98,7 +98,7 @@ IMPORTANT:
 - Ensure all questions are unique and cover different aspects of the topics"""
 
         # Initialize Gemini model
-        model = genai.GenerativeModel('gemini-2.0-flash-exp')
+        model = genai.GenerativeModel('gemini-2.0-flash-lite')
         
         # Generate content
         response = model.generate_content(
