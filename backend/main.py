@@ -9,10 +9,10 @@ from typing import List, Optional
 app = FastAPI(title="Exam Paper Generator API")
 
 # Configure CORS
-frontend_url = os.getenv("FRONTEND_URL", "http://localhost:5173")
+frontend_url = os.getenv("FRONTEND_URL", "https://paper-vista-five.vercel.app")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[frontend_url, "http://localhost:5173", "http://localhost:3000"],
+    allow_origins=[frontend_url, "https://paper-vista-five.vercel.app/", "https://paper-vista-five.vercel.app/"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

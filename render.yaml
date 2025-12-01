@@ -16,16 +16,4 @@ services:
       - key: GEMINI_API_KEY
         fromSecret: GEMINI_API_KEY
       - key: FRONTEND_URL
-        value: https://papervista-frontend.onrender.com
-
-  - type: web
-    name: papervista-frontend
-    env: static
-    plan: starter
-    region: oregon
-    
-    buildCommand: "cd frontend && npm install && npm run build"
-    staticPublishPath: frontend/dist
-    envVars:
-      - key: VITE_API_URL
-        value: https://papervista-backend.onrender.com 
+        value: https://paper-vista-five.vercel.app 
